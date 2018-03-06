@@ -44,7 +44,10 @@ module.exports = function postDeploy() {
               if (postError) {
                 console.error('Failed to post comment to GitHub, an error occurred', postError);
               } else if (postResponse.statusCode >= 400) {
-                console.error('Failed to post comment to GitHub, request failed with', postResponse);
+                console.error(
+                  'Failed to post comment to GitHub, request failed with',
+                  postResponse
+                );
               } else {
                 console.log(`Posted message to GitHub PR #${config.githubPullRequestId}`);
               }
