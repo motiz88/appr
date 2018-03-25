@@ -17,7 +17,7 @@ spawn(localExp, ['login', '-u', config.expUsername, '-p', config.expPassword, '-
   }
 
   log('Publishing project into Expo.');
-  spawn(localExp, ['publish'], publishError => {
+  spawn(localExp, ['publish', '--max-workers', '1'], publishError => {
     if (publishError) {
       throw new Error('Failed to publish package to Expo');
     } else {
